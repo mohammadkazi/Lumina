@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LUMINA — Contact Support & Global Acoustics Concierge</title>
+  <meta name="description" content="Get in touch with the LUMINA acoustic team. Direct customer care, 3-year warranty assistance, audio calibration, and worldwide office locations." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon-gem">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <span>LUMINA</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="cart-toggle-btn" id="open-cart-btn" onclick="openCartDrawer()" aria-label="View Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-count-badge">0</span>
+        </button>
+
+        <div class="nav-auth-slot">
+          <!-- Populated by auth.js -->
+        </div>
+
+        <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <span class="brand-logo" style="font-size: 1.3rem;">LUMINA</span>
+      <button class="close-drawer-btn" onclick="document.getElementById('mobile-nav-drawer').classList.remove('open'); document.getElementById('mobile-nav-backdrop').classList.remove('open');">&times;</button>
+    </div>
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="products.html" class="nav-link">Products Catalog</a>
+    <a href="about.html" class="nav-link">About Us</a>
+    <a href="contact.html" class="nav-link">Contact Support</a>
+    <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border-subtle);">
+      <a href="auth.html" class="btn btn-primary btn-block">Sign In / Account</a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="section" style="padding-top: 50px;">
+    <div class="container">
+      <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+        <span class="section-tag">Direct Communication</span>
+        <h1 class="section-title" style="font-size: 3rem;">We're Here For <span class="gradient-text">Your Sound</span></h1>
+        <p class="section-subtitle" style="margin: 0; max-width: 650px;">
+          Have questions regarding acoustic calibration, orders, or warranty claims? Our concierge team responds within 4 business hours.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Interactive Form Card -->
+        <div class="contact-card-box">
+          <h3 style="font-size: 1.6rem; margin-bottom: 8px;">Send a Priority Message</h3>
+          <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 28px;">
+            Fill out the details below and an acoustic specialist will contact you.
+          </p>
+
+          <form id="contact-form">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="form-group">
+                <label class="form-label" for="contact-name">Full Name *</label>
+                <div class="input-with-icon">
+                  <span class="input-icon-slot">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </span>
+                  <input type="text" id="contact-name" class="form-input" placeholder="e.g. Liam Vance" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-email">Email Address *</label>
+                <div class="input-with-icon">
+                  <span class="input-icon-slot">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  </span>
+                  <input type="email" id="contact-email" class="form-input" placeholder="liam@example.com" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-subject">Inquiry Subject *</label>
+              <select id="contact-subject" class="form-input" style="padding-left: 16px; cursor: pointer;">
+                <option value="Audio Calibration & Setup">Technical Audio Calibration & Setup</option>
+                <option value="Order Tracking & Shipping">Order Tracking & Shipping Inquiries</option>
+                <option value="Lumina Care 3-Year Warranty">Lumina Care 3-Year Warranty Claim</option>
+                <option value="Press & Creator Partnership">Press, Studio & Creator Partnership</option>
+                <option value="Wholesale & Commercial Sound">Wholesale & Architectural Installations</option>
+                <option value="General Inquiry">General Feedback or Inquiries</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-message">Your Message *</label>
+              <textarea id="contact-message" class="form-input" rows="5" placeholder="Please describe how we can assist you..." style="padding-left: 16px; resize: vertical;" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block" id="contact-submit-btn">
+              <span>Dispatch Message</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- Direct Contact Channels & Hubs -->
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <div class="contact-icon-bubble">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 style="font-size: 1.05rem; margin-bottom: 4px;">Direct Concierge Line</h4>
+                <p style="font-size: 0.88rem; color: var(--text-secondary);">+1 (800) 849-LUMINA (5864)</p>
+                <span style="font-size: 0.78rem; color: var(--cyan);">Mon – Fri, 8:00 AM – 8:00 PM EST</span>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon-bubble">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h4 style="font-size: 1.05rem; margin-bottom: 4px;">Electronic Mail</h4>
+                <p style="font-size: 0.88rem; color: var(--text-secondary);">concierge@lumina.io</p>
+                <span style="font-size: 0.78rem; color: var(--text-muted);">Avg response time: 2.4 hrs</span>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-icon-bubble">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <h4 style="font-size: 1.05rem; margin-bottom: 4px;">Global Headquarters & Studio</h4>
+                <p style="font-size: 0.88rem; color: var(--text-secondary);">Gotthardstrasse 26, 8002 Zürich, Switzerland</p>
+                <span style="font-size: 0.78rem; color: var(--emerald);">Acoustic listening lounge open by appointment</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick interactive City Hubs -->
+          <div class="feature-box" style="text-align: left; padding: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <h4 style="margin: 0; font-size: 1.05rem;">Experience Showrooms</h4>
+              <span class="badge-tier">3 Global Hubs</span>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+              <div style="background: rgba(0,0,0,0.25); padding: 10px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+                <strong style="font-size: 0.85rem; display: block; color: var(--cyan);">Zürich</strong>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">Acoustic Lab</span>
+              </div>
+              <div style="background: rgba(0,0,0,0.25); padding: 10px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+                <strong style="font-size: 0.85rem; display: block; color: var(--primary);">San Francisco</strong>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">DSP Software Hub</span>
+              </div>
+              <div style="background: rgba(0,0,0,0.25); padding: 10px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+                <strong style="font-size: 0.85rem; display: block; color: var(--amber);">Tokyo</strong>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">Ginza Studio</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Accordion Section -->
+      <div style="margin-top: 80px;">
+        <div class="section-header">
+          <span class="section-tag">Frequently Answered</span>
+          <h2 class="section-title">Acoustic Clarity & Support</h2>
+          <p class="section-subtitle">Common questions regarding home trials, 3-year warranty, and compatibility.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item active">
+            <div class="faq-item-header">
+              <span>What is the 30-Day Risk-Free Home Acoustic Trial?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="faq-item-body">
+              We encourage you to audition Lumina headphones and audio systems in your personal listening environment. If you are not completely spellbound by the acoustic transparency within 30 days of delivery, we provide a prepaid return courier label and complete 100% refund.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-item-header">
+              <span>How does the 3-Year Lumina Care Warranty function?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="faq-item-body">
+              Every authentic Lumina product comes standard with a 3-year international warranty covering all mechanical tolerances, drivers, wireless DSP chips, and battery degradation below 80%. In the unlikely event of a defect, we replace your unit with overnight express courier dispatch.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-item-header">
+              <span>Are Lumina audio devices compatible with Apple, Windows, and Android?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="faq-item-body">
+              Yes. All Lumina transducers support universal Bluetooth 5.4 with backward compatibility, LDAC, aptX Lossless, and AAC codecs. The Lumina Companion App is available on iOS, Android, macOS, and Windows for multi-band parametric EQ tuning and firmware updates.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-item-header">
+              <span>Can I order replacement ear cushions or modular batteries?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="faq-item-body">
+              Absolutely. Our circular design guarantee means ear cushions, audio cables, and battery packs are modular. You can purchase official replacement parts anytime from our Accessories catalog or request them through your Account Dashboard.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Slide-Over Cart Drawer -->
+  <div class="cart-backdrop" id="cart-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        Shopping Bag
+      </h3>
+      <button class="close-drawer-btn" id="close-cart-btn" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-items-container" id="cart-items-container"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <span class="cart-subtotal-price" id="cart-subtotal-price">$0.00</span>
+      </div>
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px;">Taxes and insured shipping calculated at checkout.</p>
+      <button class="btn btn-primary btn-block btn-lg" id="cart-checkout-btn">
+        Proceed to Checkout
+      </button>
+    </div>
+  </aside>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-icon-gem">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <span>LUMINA</span>
+          </a>
+          <p>Architects of high-fidelity acoustic transducers and precision biometric tech. Elevating human experience through sound and light.</p>
+          <form class="newsletter-form" style="display: flex; gap: 8px;">
+            <input type="email" placeholder="Enter your email" required class="catalog-search-input" style="padding-left: 16px; font-size: 0.85rem;" />
+            <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+          </form>
+        </div>
+
+        <div class="footer-col">
+          <h5>Collection</h5>
+          <ul>
+            <li><a href="products.html?category=audio">Spatial Headphones</a></li>
+            <li><a href="products.html?category=wearables">Chrono Smartwatches</a></li>
+            <li><a href="products.html?category=living">Ambient Home Sound</a></li>
+            <li><a href="products.html?category=accessories">Precision Accessories</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">Our Manifesto</a></li>
+            <li><a href="about.html#team">Acoustic Team</a></li>
+            <li><a href="about.html#sustainability">Sustainability</a></li>
+            <li><a href="contact.html">Press Inquiries</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Client Support</h5>
+          <ul>
+            <li><a href="contact.html">Help Center & FAQ</a></li>
+            <li><a href="auth.html#orders">Order Tracking</a></li>
+            <li><a href="contact.html#warranty">Lumina Care 3-Year</a></li>
+            <li><a href="auth.html">Account Portal</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 LUMINA Technologies Inc. All rights reserved.</p>
+        <div style="display: flex; gap: 20px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Acoustic Calibration</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/products-data.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Handle contact form submission
+    document.addEventListener("DOMContentLoaded", () => {
+      const contactForm = document.getElementById("contact-form");
+      if (contactForm) {
+        contactForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const name = document.getElementById("contact-name").value.trim();
+          const email = document.getElementById("contact-email").value.trim();
+          const subject = document.getElementById("contact-subject").value;
+          const msg = document.getElementById("contact-message").value.trim();
+
+          if (!name || !email || !msg) {
+            showToast("Please fill in all required fields.", "warning");
+            return;
+          }
+
+          const ticketId = "TKT-" + Math.floor(1000 + Math.random() * 9000);
+          showToast(`Inquiry dispatched! Ticket #${ticketId} created. We'll reply to ${email} shortly.`, "success");
+          contactForm.reset();
+        });
+      }
+    });
+  </script>
+</body>
+</html>
